@@ -19,6 +19,10 @@ class Signup extends React.Component {
 
     this.handleChange = this.handleChange.bind(this)
     this.submitForm = this.submitForm.bind(this)
+    this.loginForm = this.loginForm.bind(this)
+    this.signupForm = this.signupForm.bind(this)
+    this.handleSwitchToLogin = this.handleSwitchToLogin.bind(this)
+    this.handleSwitchToSignup = this.handleSwitchToSignup.bind(this)
   }
 
   // Handle Form Updates
@@ -32,6 +36,19 @@ class Signup extends React.Component {
     console.log("Value:" + event.target.value)
   }
 
+  // On Login Page -> Switch to Signup
+  handleSwitchToSignup() {
+    this.setState({
+      isNewUser: true
+    })
+  }
+
+  // On Signup Page -> Switch to Login
+  handleSwitchToLogin() {
+    this.setState({
+      isNewUser: false
+    })
+  }
 
   // Submit Form
   submitForm(event) {
@@ -39,8 +56,8 @@ class Signup extends React.Component {
     event.preventDefault()
   }
 
-  // Component
-  render() {
+  // Login Form Component
+  loginForm() {
     return (
       <div>
         <Nav />
@@ -83,7 +100,7 @@ class Signup extends React.Component {
 
 
               {/* Forgot Password */}
-              <a className="inline-block align-baseline font-bold text-sm text-hammrBlue hover:text-blue-600 pl-2" href="#">
+              <a className="inline-block align-baseline font-bold text-sm text-hammrBlue hover:text-blue-600 pl-2">
                 Forgot Password? </a>
             </div>
             
@@ -93,7 +110,7 @@ class Signup extends React.Component {
               No account?
             </p>
             
-            <button className="inline-block align-baseline font-bold text-sm text-hammrBlue hover:text-blue-600" href="#"
+            <button className="inline-block align-baseline font-bold text-sm text-hammrBlue hover:text-blue-600" onClick={this.handleSwitchToSignup}
             >
               Sign Up</button>
             </div>
@@ -103,6 +120,42 @@ class Signup extends React.Component {
         </div>
       </div>
     )
+  }
+
+  // Signup Form Component
+  signupForm() {
+    return (
+      <div>
+        <Nav />
+        
+        <div>
+          <p>Signup Form</p>
+        </div>
+        
+      </div>
+    )
+  }
+
+  // Component
+  render() {
+    
+    const isNewUser = this.state.isNewUser
+
+    if (isNewUser === false) {
+      return (
+        <div>
+          <this.loginForm/>
+        </div>
+        )
+    } else {
+      return (
+      <div>
+        <this.signupForm/>
+      </div>
+      )
+    }
+    
+    
   }
 
 
