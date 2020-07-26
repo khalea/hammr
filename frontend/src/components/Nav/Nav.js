@@ -12,9 +12,9 @@ export default function Nav() {
       >hammr</Link>
 
       <div className="links w-1/10 flex items-center space-x-3">
-        <Link to="/" className="text-black font-extrabold hover:underline">Marketplace</Link>
+        <Link to="/" className="text-black font-extrabold hover:underline">Browse</Link>
 
-        <Link to="/" className="text-black font-extrabold hover:underline">Developers</Link>
+        <Link to="/" className="text-black font-extrabold hover:underline">Submit</Link>
 
 
         <LoginButton />

@@ -2,8 +2,6 @@ module.exports = {
   purge: [],
   theme: {
     
-    boxShadow: {
-     },
     
     extend: {
       colors: {
