@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "../../components/Nav/Nav.js";
+import Topo from "./images/topography.svg"
 
 import { withRouter } from "react-router";
 
@@ -69,13 +70,13 @@ class Signup extends React.Component {
   // Login Form Component
   loginForm() {
     return (
-      <div>
+      <div style={{ backgroundImage: "url(" + Topo + ")" }}>
         <Nav />
 
         {/* Form */}
         <div className="login-container flex flex-row justify-center">
           <form
-            className="login-card flex flex-col justify-center shadow-lg rounded px-8 pt-6 pb-8 mb-4"
+            className="login-card bg-white flex flex-col justify-center shadow-lg rounded-md px-8 pt-6 pb-8 mb-4"
             onSubmit={this.submitForm}
           >
             {/* Username Field */}
@@ -137,13 +138,13 @@ class Signup extends React.Component {
   // Signup Form Component
   signupForm() {
     return (
-      <div>
+      <div style={{ backgroundImage: "url(" + Topo + ")" }}>
         <Nav />
 
         {/* Form */}
         <div className="login-container flex flex-row justify-center">
           <form
-            className="login-card flex flex-col justify-center shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            className="login-card bg-white flex flex-col justify-center shadow-md rounded-md px-8 pt-6 pb-8 mb-4"
             onSubmit={this.submitForm}
           >
             {/* Username Field */}
