@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../../components/Nav/Nav.js";
-import Topo from "./images/topography.svg"
+import Topo from "./images/topography.svg";
 
 import { withRouter } from "react-router";
 
@@ -36,6 +36,18 @@ class Signup extends React.Component {
         " Password: " +
         this.state.password
     );
+
+    // Successful call example
+    fetch("/api/hello", {
+      method: "GET",
+    }).then((response) => {
+      console.log(response.status + " " + response.statusText);
+      console.log(response.text());
+    })
+    .catch(error => {
+      console.log(error)
+    });
+
     event.preventDefault();
   }
 
@@ -70,7 +82,10 @@ class Signup extends React.Component {
   // Login Form Component
   loginForm() {
     return (
-      <div style={{ backgroundImage: "url(" + Topo + ")" }}>
+      <div
+        className="login w-screen h-screen"
+        style={{ backgroundImage: "url(" + Topo + ")" }}
+      >
         <Nav />
 
         {/* Form */}
@@ -111,7 +126,10 @@ class Signup extends React.Component {
               </button>
 
               {/* Forgot Password */}
-              <a className="inline-block align-baseline font-bold text-sm text-hammrBlue hover:text-blue-600 pl-2">
+              <a
+                className="inline-block align-baseline font-bold text-sm text-hammrBlue hover:text-blue-600 pl-2"
+                href="/Signup"
+              >
                 Forgot Password?{" "}
               </a>
             </div>
@@ -138,13 +156,16 @@ class Signup extends React.Component {
   // Signup Form Component
   signupForm() {
     return (
-      <div style={{ backgroundImage: "url(" + Topo + ")" }}>
+      <div
+        className="signup w-screen h-screen"
+        style={{ backgroundImage: "url(" + Topo + ")" }}
+      >
         <Nav />
 
         {/* Form */}
         <div className="login-container flex flex-row justify-center">
           <form
-            className="login-card bg-white flex flex-col justify-center shadow-md rounded-md px-8 pt-6 pb-8 mb-4"
+            className="login-card bg-white flex flex-col justify-center shadow-lg rounded-md px-8 pt-6 pb-8 mb-4"
             onSubmit={this.submitForm}
           >
             {/* Username Field */}

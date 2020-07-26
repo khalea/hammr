@@ -6,13 +6,13 @@ import WFH from "./images/wfh_9.svg"
 export default function Home() {
   return (
     <div
-      className="home-container w-full h-full"
+      className="home-container w-screen h-screen"
       style={{ backgroundImage: "url(" + Plus + ")" }}
     >
       <Nav />
 
       {/* Splash -> Changes from row to column based on size*/}
-      <div className="flex sm:flex-col sm:justify-center md:flex-row md:justify-between m-8">
+      <div className="flex flex-col justify-center md:flex-row md:justify-between m-8">
         
         {/* Splash Row*/}
         <div className="w-1/2">
@@ -23,7 +23,7 @@ export default function Home() {
 
         {/* Image Column */}
         <div className="w-1/2">
-          <img className="w-full" src={WFH} alt="Discord Screenshot"/>
+          <img className="w-full" src={WFH} alt="Illustration of a woman & man video chatting."/>
         </div>
       </div>
     </div>
