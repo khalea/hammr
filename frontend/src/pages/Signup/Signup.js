@@ -6,6 +6,11 @@ import { withRouter } from "react-router";
 
 // Potentially uodate to use Formik https://formik.org/
 
+/* TODO
+- Move signupForm and loginForm to different files
+- Add text field validation (rules for acceptable input)
+*/
+
 class Signup extends React.Component {
   // Constructor -> Establish relevant state variables
   constructor(props) {
@@ -27,26 +32,26 @@ class Signup extends React.Component {
   }
 
   // Submit Form -- TODO, for now it just prints the values
+  
   submitForm(event) {
-    console.log(
-      "Submitted Email:" +
-        this.state.email +
-        " Username: " +
-        this.state.username +
-        " Password: " +
-        this.state.password
-    );
-
-    // Successful call example
+    // Submits form to /api/hello
     fetch("/api/hello", {
-      method: "GET",
+      method: "POST",
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        user: {
+          email: this.state.email,
+          username: this.state.username,
+          password: this.state.password
+        } 
+      })
     }).then((response) => {
-      console.log(response.status + " " + response.statusText);
-      console.log(response.text());
-    })
-    .catch(error => {
-      console.log(error)
-    });
+      response.json().then(data =>
+          console.log(data)
+        )
+    }).catch(
+      err => {console.log()}
+    )
 
     event.preventDefault();
   }
@@ -58,8 +63,6 @@ class Signup extends React.Component {
     this.setState({
       [event.target.name]: value,
     });
-    // Prints out current field value
-    console.log("Value:" + event.target.value);
   }
 
   // On Login Page -> Switch to Signup

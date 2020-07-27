@@ -14,7 +14,9 @@ app.get('/api/', (req, res) => res.send('API works'))
 // app.get('/api/hello/', (req, res) => {res.send('Hello World!')})
 
 app.post('/api/hello/', (req, res) => {
-    console.log(req.body.user)
+    // Prints to server
+    console.log(req.body.user.email)
+    res.send()
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
