@@ -6,14 +6,14 @@ import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 import "./styles/main.css";
 
 import Home from "./pages/Home/Home";
-import Signup from "./pages/Signup/Signup";
+import Auth from "./pages/Auth/Auth.js"
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/Signup" component={Signup} />
+        <Route exact path="/Auth" component={Auth} />
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,
