@@ -35,7 +35,7 @@ class Signup extends React.Component {
   
   submitForm(event) {
     // Submits form to /api/hello
-    fetch("/api/hello", {
+    fetch("/api/auth/signup", {
       method: "POST",
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

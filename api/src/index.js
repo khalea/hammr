@@ -3,16 +3,26 @@ const app = express()
 const bodyParser  = require('body-parser');
 const port = 3001
 
-// Run node src/index.js to start
-
 // Parse URLencoded files
 app.use(bodyParser.urlencoded({extended: true}))
 // Parse JSON body
 app.use(bodyParser.json())
 
-app.get('/api/', (req, res) => res.send('API works'))
-// app.get('/api/hello/', (req, res) => {res.send('Hello World!')})
+// Run node src/index.js to start
+// Reference https://github.com/khalea/mern-exercise-tracker-mongodb/tree/master/backend
 
+// Routing
+const router = express.Router()
+app.use('/api', router)
+// Authentication router
+const authRouter = require('./auth/auth.js');
+app.use('/api/auth', authRouter);
+
+
+
+
+
+// Test post request
 app.post('/api/hello/', (req, res) => {
     // Prints to server
     console.log(req.body.user.email)
