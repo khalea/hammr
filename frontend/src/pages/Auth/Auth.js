@@ -7,7 +7,6 @@ import { withRouter } from "react-router";
 // Potentially uodate to use Formik https://formik.org/
 
 /* TODO
-- Move signupForm and loginForm to different files
 - Add text field validation (rules for acceptable input)
 */
 

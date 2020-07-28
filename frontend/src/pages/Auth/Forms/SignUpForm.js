@@ -9,6 +9,8 @@ class SignUpForm extends React.Component {
         super(props);
         // State variables
         this.state = {
+            firstName: "",
+            lastName: "",
             email: "",
             username: "",
             password: "",
@@ -37,6 +39,8 @@ class SignUpForm extends React.Component {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     user: {
+                        firstName: this.state.firstName,
+                        lastName: this.state.lastName,
                         email: this.state.email,
                         username: this.state.username,
                         password: this.state.password
@@ -66,7 +70,29 @@ class SignUpForm extends React.Component {
             className="login-card bg-white flex flex-col justify-center shadow-lg rounded-md px-8 pt-6 pb-8 mb-4"
             onSubmit={this.submitForm}
           >
-            {/* Username Field */}
+          {/* First Name Field */}
+          <label className="font-bold">First Name </label>
+            <input
+              value={this.state.firstName}
+              name="firstName"
+              onChange={this.handleFormChange}
+              type="text"
+              placeholder="Jane"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            ></input>
+
+            {/* Last Name Field */}
+          <label className="font-bold">Last Name </label>
+            <input
+              value={this.state.lastName}
+              name="lastName"
+              onChange={this.handleFormChange}
+              type="text"
+              placeholder="Doe"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            ></input>
+
+            {/* Email Field */}
             <label className="font-bold">Email</label>
             <input
               value={this.state.email}

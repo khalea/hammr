@@ -19,10 +19,10 @@ router.route("/signup").post((req, res) => {
     const collection = client.db("hammr-general").collection("users");
     // perform actions on the collection object
     collection.insert({
-      firstName: 'testing',
-      lastName: 'insert new',
-      email: 'test@gmail.com',
-      password: 'test'
+      firstName: req.body.user.firstName,
+      lastName: req.body.user.lastName,
+      email: req.body.user.email,
+      password: req.body.user.password
     }).then(result => {
       console.log('Added new user to DB:')
       console.log(result)
