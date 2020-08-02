@@ -12,7 +12,7 @@ export default function Home() {
       <Nav />
 
       {/* Splash -> Changes from row to column based on size*/}
-      <div className="flex flex-col justify-center items-center md:items-start md:flex-row md:justify-between m-8 w-screen">
+      <div className="flex flex-col justify-center items-center md:items-start md:flex-row md:justify-between p-5 w-screen">
         
         {/* Splash Row*/}
         <div className="w-1/2">

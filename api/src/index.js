@@ -11,6 +11,11 @@ app.use(bodyParser.json())
 // Run node src/index.js to start
 // Reference https://github.com/khalea/mern-exercise-tracker-mongodb/tree/master/backend
 
+/* TODO
+Security
+    -> Add text field validation to avoid NoSQL injection
+*/
+
 // Routing
 const router = express.Router()
 app.use('/api', router)

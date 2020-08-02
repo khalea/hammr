@@ -4,9 +4,9 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 
 import "./styles/main.css";
-
 import Home from "./pages/Home/Home";
 import Auth from "./pages/Auth/Auth.js"
+import Dashboard from "./pages/User/Dashboard.js"
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,6 +14,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/Auth" component={Auth} />
+        <Route exact path="/Dashboard" component={Dashboard} />
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,

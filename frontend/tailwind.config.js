@@ -6,7 +6,8 @@ module.exports = {
     extend: {
       colors: {
         hammrBlue: '#1098f7',
-        hammrGreen: '#63cf6c'
+        hammrGreen: '#63cf6c',
+        hammrMint: '#56B39C'
       }
     },
   },
