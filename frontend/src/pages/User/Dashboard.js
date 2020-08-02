@@ -32,20 +32,22 @@ export default class Dashboard extends Component {
                                 <h3 className="text-md text-hammrMint">@northkhalea</h3>
                             </div>
 
-                            <div className="dashboard-nav flex flex-col p-5 items-center">
-                                <ul>
-                                    <li><a className="inline-block rounded py-1 px-3 text-white bg-hammrMint hover:bg-gray-500 mb-1" href="#Bookmarks">Bookmarks</a></li>
-                                    <li><a className="inline-block border border-white rounded text-white bg-hammrMint hover:border-gray-200 hover:bg-gray-500 py-1 px-3 mb-1" href="#Products">Products</a></li>
-                                    <li><a className="inline-block border border-white rounded text-white bg-hammrMint hover:border-gray-200 hover:bg-gray-500 py-1 px-3 mb-1" href="#Communties">Communities</a></li>
-                                </ul>
-                            </div>
+                            
                         </div>
 
 
 
                     </div>
 
-                    <div className="dashboard-right w-3/5 h-full flex">
+                    <div className="dashboard-right w-full h-full flex flex-col">
+
+                        <div className="dashboard-nav">
+                            <ul className="flex flex-row border-b">
+                                <li className="m-1 mb-0 p-2 rounded text-hammrMint"><a className="border-l border-t border-r rounded-t py-2 px-4 hover:text-white  hover:bg-gray-400" href="#Bookmarks">Bookmarks</a></li>
+                                <li className="m-1 mb-0 p-2 rounded text-hammrMint"><a className="border-l border-t border-r rounded-t py-2 px-4 hover:text-white  hover:bg-gray-400" href="#Products">Products</a></li>
+                                <li className="m-1 mb-0 p-2 rounded text-hammrMint"><a className="border-l border-t border-r rounded-t py-2 px-4 hover:text-white  hover:bg-gray-400" href="#Communities">Communities</a></li>
+                            </ul>
+                        </div>
 
                     </div>
 
