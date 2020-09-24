@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import LoginButton from "./LoginButton.js";
+import AuthButtons from './AuthButtons.js'
 
 export default function Nav() {
   return (
@@ -15,9 +15,7 @@ export default function Nav() {
         <Link to="/" className="text-black font-extrabold hover:underline">Browse</Link>
 
         <Link to="/" className="text-black font-extrabold hover:underline">Submit</Link>
-
-
-        <LoginButton />
+        <AuthButtons />
       </div>
 
     </div>

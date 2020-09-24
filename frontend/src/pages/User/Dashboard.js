@@ -1,58 +1,42 @@
-import React, { Component } from 'react'
+import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 import Nav from '../../components/Nav/Nav.js'
 
-/* 
-LoggedIn state must be true to access this page
-*/
+const Profile = () => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
 
-export default class Dashboard extends Component {
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = {
+  if (isAuthenticated) {
+    return (
+      <div>
 
-        }
-    }
+        <Nav />
 
+        <div className="user-card flex flex-row justify-start bg-white rounded-lg shadow-lg px-8 py-8 mx-8 my-8">
+          <img className="profile-picture h-16 w-16 md:h-24 md:w-24 mr-8 rounded-full"
+            src={user.picture} alt={user.name} />
+          
+          <div className="user-info flex flex-col justify-center align-middle md:text-left">
+            <h2 className="user-name text-lg font-bold">{user.name}</h2>
+            <p className="user-email font-light">{user.email}</p>
+          </div>
 
-    render() {
-        return (
-            <div className="w-screen h-screen">
-                <Nav />
-                <div className="dashboard-container w-screen h-auto p-5 flex flex-row">
-
-                    <div className="dashboard-left w-1/5 h-full mr-8 flex flex-col items-center">
-
-                        <div className="dashboard-user flex flex-col items-center mb-6 p-5 bg-white rounded-md shadow-lg">
-
-                            <div className="flex flex-col items-center">
-                                <div className="image-placeholder h-24 w-24 m-5 rounded-full bg-hammrMint"></div>
-                                <h1 className="text-lg font-bold">Khalea Berry</h1>
-                                <h3 className="text-md text-hammrMint">@northkhalea</h3>
-                            </div>
-
-                            
-                        </div>
-
+        </div>
+      </div>
+    )
+  } else {
+    return(
+      <div>
+        <h1>You need to log in</h1>
+      </div>
+    )
+  }
 
 
-                    </div>
+};
 
-                    <div className="dashboard-right w-full h-full flex flex-col">
-
-                        <div className="dashboard-nav">
-                            <ul className="flex flex-row border-b">
-                                <li className="m-1 mb-0 p-2 rounded text-hammrMint"><a className="border-l border-t border-r rounded-t py-2 px-4 hover:text-white  hover:bg-gray-400" href="#Bookmarks">Bookmarks</a></li>
-                                <li className="m-1 mb-0 p-2 rounded text-hammrMint"><a className="border-l border-t border-r rounded-t py-2 px-4 hover:text-white  hover:bg-gray-400" href="#Products">Products</a></li>
-                                <li className="m-1 mb-0 p-2 rounded text-hammrMint"><a className="border-l border-t border-r rounded-t py-2 px-4 hover:text-white  hover:bg-gray-400" href="#Communities">Communities</a></li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        )
-    }
-}
+export default Profile;
