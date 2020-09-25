@@ -6,11 +6,6 @@ import { withRouter } from "react-router";
 
 // Potentially uodate to use Formik https://formik.org/
 
-/* TODO
-Security
-    -> Add text field validation to avoid NoSQL injection
-*/
-
 class Auth extends React.Component {
 
     constructor(props) {

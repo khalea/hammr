@@ -9,10 +9,6 @@ import Home from "./pages/Home/Home";
 import Auth from "./pages/Auth/Auth.js"
 import Dashboard from "./pages/User/Dashboard.js"
 
-const authDomain = process.env.AUTH0_CLIENT_DOMAIN
-const authClientID = process.env.AUTH0_CLIENT_ID
-const authSecret = process.env.AUTH0_CLIENT_SECRET
-
 
 ReactDOM.render(
 
